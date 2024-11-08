@@ -21,6 +21,16 @@ async function createProduce(formData){
     }
 }
 
+async function findOneProduce(id){
+    try {
+        let url = `http://localhost:3000/api/produce/${id}`;
+        let res = await axios.get(url)
+        return res.data;
+    } catch (error) {
+        console.error(error)
+    }
+}
+
 async function deleteProduce(id){
     try {
         let url = `http://localhost:3000/api/produce/${id}`;
@@ -41,4 +51,4 @@ async function updateProduce(id, formData){
     }
 }
 
-export {getInventory, createProduce, deleteProduce, updateProduce}
+export {getInventory, createProduce, findOneProduce, deleteProduce, updateProduce}
