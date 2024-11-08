@@ -44,6 +44,7 @@ async function deleteProduce(id){
 async function updateProduce(id, formData){
     try {
         let url = `http://localhost:3000/api/produce/${id}`;
+        formData.price = '$' + formData.price; //add back $ to price
         let res = await axios.put(url, formData);
         return res.data;
     } catch (error) {
