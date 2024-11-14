@@ -2,7 +2,7 @@ import axios from 'axios';
 
 async function getInventory(){
     try {
-        let url = 'http://localhost:3000/api/produce';
+        let url = 'https://produceinventory-server.onrender.com/api/produce';
         let res = await axios.get(url)
         return res.data;
     } catch (error) {
@@ -12,7 +12,7 @@ async function getInventory(){
 
 async function createProduce(formData){
     try {
-        let url = 'http://localhost:3000/api/produce';
+        let url = 'https://produceinventory-server.onrender.com/api/produce';
         formData.price = '$' + formData.price;
         let res = await axios.post(url, formData);
         return res.data;
@@ -23,7 +23,7 @@ async function createProduce(formData){
 
 async function findOneProduce(id){
     try {
-        let url = `http://localhost:3000/api/produce/${id}`;
+        let url = `https://produceinventory-server.onrender.com/api/produce/${id}`;
         let res = await axios.get(url)
         return res.data;
     } catch (error) {
@@ -33,7 +33,7 @@ async function findOneProduce(id){
 
 async function deleteProduce(id){
     try {
-        let url = `http://localhost:3000/api/produce/${id}`;
+        let url = `https://produceinventory-server.onrender.com/api/produce/${id}`;
         let res = await axios.delete(url);
         return true;
     } catch (error) {
@@ -43,7 +43,7 @@ async function deleteProduce(id){
 
 async function updateProduce(id, formData){
     try {
-        let url = `http://localhost:3000/api/produce/${id}`;
+        let url = `https://produceinventory-server.onrender.com/api/produce/${id}`;
         formData.price = '$' + formData.price; //add back $ to price
         let res = await axios.put(url, formData);
         return res.data;
